@@ -3,11 +3,10 @@ import Producto from './Producto'
 
 const styles = {
     productos: {
-        padding: '0% 12%',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        flexWrap: 'wrap'
+       
     }
 }
 

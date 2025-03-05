@@ -1,13 +1,19 @@
 import React, { Component } from "react";
+import Button from './Button'
 
 const styles = {
     producto: {
-        border: 'solid 1px #eee',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        jeustifyContent: 'end',
+        padding: '16px',
+        marginBottom: '16px',
+        border: 'none',
         boxShadow: '0 5px 5px rgba(0,0,0,0.1)',
-        width: '13%',
-        padding: '10px 15px',
+        width: '15%',
         borderRadius: '5px',
-        margin: '10px 15px'
+        cursor: 'pointer',
     },
 
     img: {
@@ -17,13 +23,15 @@ const styles = {
 
 class Producto extends Component {
     render() {
-        const { producto } = this.props
+        const { producto, agregarAlCarro } = this.props
         return(
             <div style={styles.producto}>
                 < img style={styles.img} alt={producto.nombre} src={producto.img}  />
                 <h3>{producto.nombre}</h3>
                 <p>{producto.precio}</p>
-                <button onClick={this.props.agregarAlCarro}>Agregar al carro</button>
+                <Button onClick={ () => agregarAlCarro(producto)}>
+                    Agregar al carro
+                </Button>
             </div>
         )
     }
