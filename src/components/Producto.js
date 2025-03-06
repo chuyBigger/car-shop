@@ -25,7 +25,7 @@ class Producto extends Component {
     render() {
         const { producto, agregarAlCarro } = this.props
         return(
-            <div style={styles.producto}>
+            <div key={producto.id} style={styles.producto}>
                 < img style={styles.img} alt={producto.nombre} src={producto.img}  />
                 <h3>{producto.nombre}</h3>
                 <p>{producto.precio}</p>

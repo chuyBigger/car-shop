@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import Logo from './Logo'
+import Carro from './Carro'
 
 const styles = {
     navbar: {
@@ -6,6 +8,7 @@ const styles = {
         color: '#fff',
         display: 'flex',
         alignItems: 'center',
+        flexDirection: 'row',
         height: '100px',
         justifyContent: 'space-between',
         position: 'relative',
@@ -20,8 +23,8 @@ class Navbar extends Component {
         return(
             <nav style={styles.navbar}>
 
-                <p>Car Shop</p>
-                <a href="/">Car Shop</a>
+                <Logo/>
+                <Carro/>
             </nav>
         )
     }
