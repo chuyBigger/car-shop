@@ -1,0 +1,6 @@
+{carro.map(x => 
+                        <li key={x.id}>
+                            <img alt={x.nombre} src={x.img }  width='50' height='32' />
+                            {x.nombre} - {x.cantidad}
+                        </li>
+                    )}

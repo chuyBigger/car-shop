@@ -4,7 +4,7 @@ import Layout from './components/Layout';
 import Navbar from './components/Navbar';
 import Logo from './components/Logo';
 import Title from './components/Title';
-import Carro from "./components/Carro";
+import carro from "./components/Carro";
 
 class App extends Component {
   state = {
@@ -15,24 +15,44 @@ class App extends Component {
       {id:4, nombre: 'Cebolla', precio: 4, img : '/productos/cebolla.jpeg' },
       {id:5, nombre: 'Zanahoria', precio: 5, img: '/productos/zanahoria.jpeg' },
     ],
-    Carro: [
-      // {id:1, nombre: 'Tomate', precio: 1, img: '/productos/tomate.jpeg', cantidad: 1 },
-    ]
+    carro: [],
+    escarroVisible: false
   }
+  
   agregarAlCarro = (producto) => {
+    const { carro } = this.state
+    if(carro.find(x => x.id === producto.id)){
+      const newCarro = carro.map(x => x.id === producto.id
+        ? ({
+          ...x,
+          cantidad: x.cantidad + 1
+        })
+        : x
+      )
+      return this.setState({ carro: newCarro})
+    }
+
     return this.setState({
-      Carro: this.state.Carro.concat({
+      carro: this.state.carro.concat({
         ...producto,
         cantidad: 1
       })
     })
   }
 
-  render(){
-    console.log(this.state.Carro)
+  mostrarCarro = () => {
+    this.setState({ escarroVisible: !this.state.escarroVisible})
+  }
+
+  render(){ 
+    const {esCarroVisible} = this.state
     return (
       <div className="App">
-        <Navbar />
+        <Navbar 
+          carro={this.state.carro} 
+          esCarroVisible={esCarroVisible} 
+          mostrarCarro={this.mostrarCarro}
+        />
         <Layout>
           <Title/>
           <Productos
