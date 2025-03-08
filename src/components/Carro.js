@@ -22,7 +22,7 @@ const styles = {
 
 class Carro extends Component {
     render() {
-        const { carro, esCarroVisible, mostrarCarro } = this.props
+        const { carro, escarroVisible, mostrarCarro } = this.props
         const cantidad = carro.reduce( (acc, el) => acc + el.cantidad, 0)
         return(
             <div>
@@ -35,7 +35,10 @@ class Carro extends Component {
                 <button onClick={mostrarCarro} style={styles.carro}>
                 Carro
                 </button>
-                <DetallesCarro carro={carro}/>
+                {
+                    escarroVisible ? <DetallesCarro carro={carro}/> : null
+                }
+                
             </div>
             
         )

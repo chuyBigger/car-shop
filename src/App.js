@@ -41,16 +41,20 @@ class App extends Component {
   }
 
   mostrarCarro = () => {
+    if (!this.state.carro.length){
+        return
+      }
+    
     this.setState({ escarroVisible: !this.state.escarroVisible})
   }
 
   render(){ 
-    const {esCarroVisible} = this.state
+    const {escarroVisible} = this.state
     return (
       <div className="App">
         <Navbar 
           carro={this.state.carro} 
-          esCarroVisible={esCarroVisible} 
+          escarroVisible={escarroVisible} 
           mostrarCarro={this.mostrarCarro}
         />
         <Layout>

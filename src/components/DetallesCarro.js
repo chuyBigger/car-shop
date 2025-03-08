@@ -31,8 +31,8 @@ const styles = {
     },
     cubic: {
         borderRadius: '5px',
-        backgroundColor: '#ccc',
-        color: '#ff5252',
+        backgroundColor: '#359a2c',
+        color: '#fff',
         padding: '5px 10px',
     }
 }

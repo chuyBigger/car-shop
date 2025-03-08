@@ -20,14 +20,14 @@ const styles = {
 
 class Navbar extends Component {
     render() {
-        const {carro, esCarroVisible, mostrarCarro} = this.props
+        const {carro, escarroVisible, mostrarCarro} = this.props
         return(
             <nav style={styles.navbar}>
 
                 <Logo/>
                 <Carro 
                     carro={carro}
-                    escarroVisible={esCarroVisible}
+                    escarroVisible={escarroVisible}
                     mostrarCarro={mostrarCarro}
                 />
             </nav>
