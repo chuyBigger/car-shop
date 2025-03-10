@@ -6,7 +6,7 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        jeustifyContent: 'end',
+        justifyContent: 'space-between',
         padding: '16px',
         marginBottom: '16px',
         border: 'none',
@@ -14,11 +14,18 @@ const styles = {
         width: '15%',
         borderRadius: '5px',
         cursor: 'pointer',
+        textAlign: 'center',
     },
 
     img: {
-        width: '100%'
+        maxWidth: '100%',  // La imagen no será más ancha que su contenedor
+        maxWidth: '100%',  // La imagen no será más ancha que su contenedor
+        maxHeight: '180px', // La imagen no será más alta que este valor
+        display: 'block',  // Evita problemas con alineación
+        margin: 'auto',    // Centra la imagen si es más pequeña
+        objectFit: 'contain' // Muestra toda la imagen sin recortarla    }
     }
+    
 }
 
 class Producto extends Component {
@@ -28,7 +35,7 @@ class Producto extends Component {
             <div key={producto.id} style={styles.producto}>
                 < img style={styles.img} alt={producto.nombre} src={producto.img}  />
                 <h3>{producto.nombre}</h3>
-                <p>{producto.precio}</p>
+                <p>{'$ '}{producto.precio}</p>
                 <Button onClick={ () => agregarAlCarro(producto)}>
                     Agregar al carro
                 </Button>

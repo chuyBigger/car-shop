@@ -34,6 +34,21 @@ const styles = {
         backgroundColor: '#359a2c',
         color: '#fff',
         padding: '5px 10px',
+        with: '42px',
+        textAlign: 'center',
+    },
+    precioo: {
+        fontWeight: 'bold',
+        color: '#fff',
+    },
+    total: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '10px 15px',
+        fontWeight: 'bold',
+        backgroundColor: '#0a283e',
+        color: '#fff',
     }
 }
 
@@ -43,7 +58,6 @@ class DetallesCarro extends Component {
         const { carro } = this.props
         return(
             <div style={styles.detallesCarro}>
-                <h3 style={styles.title}>Tus Compras</h3>
                 <ul style={styles.ul}>
                     {carro.map((x, index) => 
                         <li key={x.id}
@@ -56,10 +70,13 @@ class DetallesCarro extends Component {
                         >
                             
                             <img alt={x.nombre} src={x.img }  width='50' height='32' />
-                            {x.nombre}  <span style={styles.cubic}>{x.cantidad}</span>
+                            {x.nombre}  <span style={styles.cubic}>{x.cantidad}<span style={styles.precioo}>{'   $'}{x.precio} </span></span>
                         </li>
                     )}
                 </ul>
+                <h3 style={styles.total}>Total: {'$'}
+                    {carro.reduce((acc, el) => acc + el.precio * el.cantidad, 0)}
+                </h3>
             </div>
         )
     }
