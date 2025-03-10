@@ -1,3 +1,35 @@
+# Ejercicio en React basico CARRITO DE COMPRAS
+
+## Una paguina sobre en carro de compras 
+
+### Primera vista del ejercicio
+
+![Imagen vista General](RM/Screenshot%202025-03-10%20004552.png)
+
+Estoy comenzando con **React** y este es un ejercicio enfocado principalmente en el uso de **funciones y componentes**
+
+### Contiene un alert en el boton del carro que permite ver la cantidad de productos selecionados si son mas de 9 solo se vera "9+"
+
+![Alert en el carro](RM/Screenshot%202025-03-10%20004603.png)
+
+### El menu del carro hace la suma total del costo y te muestra la cantidad selecionada de cada producto
+
+![Menu del carro con suma total](RM/Screenshot%202025-03-10%20004611.png)
+
+## Estoy progresando de manera constante y adquiriendo experiencia en el proceso.
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
