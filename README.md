@@ -25,6 +25,10 @@ Estoy comenzando con **React** y este es un ejercicio enfocado principalmente en
 
 
 
+https://github.com/user-attachments/assets/21e5f00b-32e6-46f9-bc0b-e01025fe3e1a
+
+
+
 
 
 
